@@ -1,0 +1,34 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+body { background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh; }
+.atm-container { background-color: #1a365d; color: white; width: 1000px; height: 600px; display: flex; flex-direction: column; border-radius: 10px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.atm-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 30px; border-bottom: 2px solid #2a4365; }
+.logo, .user-info, .system-status { font-size: 14px; }
+.user-info { text-align: center; }
+.user-info strong { font-size: 18px; }
+.system-status { text-align: right; }
+.main-interface { display: flex; flex: 1; }
+.services-grid { flex: 3; display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(3, 1fr); gap: 15px; padding: 20px; transition: all 0.3s ease; }
+.grid-btn { background-color: white; color: #1a365d; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: transform 0.1s; }
+.grid-btn:active { transform: scale(0.95); }
+.grid-btn small { font-size: 12px; font-weight: normal; margin-top: 5px; color: #4a5568; }
+.highlight-btn { background-color: #ebf8ff; border: 2px solid #3182ce; }
+.side-panel { flex: 1; background-color: #2a4365; padding: 20px; display: flex; flex-direction: column; gap: 15px; }
+.side-btn { padding: 15px; border: none; border-radius: 8px; color: white; font-weight: bold; font-size: 16px; cursor: pointer; }
+.blue-btn { background-color: #3182ce; }
+.red-btn { background-color: #e53e3e; }
+.balance-display { background-color: #1a365d; padding: 20px; border-radius: 8px; font-size: 14px; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.balance-display strong { font-size: 20px; }
+
+/* Investment Modal Styles */
+.modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: flex; justify-content: center; align-items: center; z-index: 1000; }
+.hidden { display: none; }
+.modal-content { background-color: #1a365d; color: white; width: 600px; border-radius: 10px; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+.modal-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #2a4365; padding-bottom: 10px; margin-bottom: 15px; }
+.close-btn { padding: 5px 15px; border: none; border-radius: 5px; color: white; cursor: pointer; font-weight: bold; }
+.portfolio-summary { background-color: #2a4365; padding: 15px; border-radius: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; }
+.market-list { max-height: 300px; overflow-y: auto; }
+.asset-card { background-color: white; color: #1a365d; padding: 15px; border-radius: 8px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+.asset-info strong { font-size: 18px; text-transform: uppercase; }
+.trade-controls button { padding: 8px 12px; margin-left: 5px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; color: white; }
+.btn-buy { background-color: #48bb78; }
+.btn-sell { background-color: #e53e3e; }

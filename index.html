@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Commerce Bank - Advanced ATM System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="atm-container">
+    <header class="atm-header">
+        <div class="logo">GLOBAL COMMERCE BANK</div>
+        <div class="user-info">Welcome,<br><strong>ALEX JOHNSON</strong></div>
+        <div class="system-status">
+            <span class="time" id="clock">10:45 AM | Oct 26, 2023</span>
+            <div class="language-toggle">US English | ES Spanish</div>
+        </div>
+    </header>
+    <div class="main-interface">
+        <main class="services-grid">
+            <button class="grid-btn highlight-btn" id="btn-quick-cash">Quick Cash<br><small>$40 Preset Withdrawal</small></button>
+            <button class="grid-btn">Withdrawal<br><small>Custom Amount</small></button>
+            <button class="grid-btn">Deposit<br><small>Cash/Check</small></button>
+            <button class="grid-btn">Balance Inquiry<br><small>View Accounts</small></button>
+            <button class="grid-btn">Funds Transfer<br><small>Account & External</small></button>
+            <button class="grid-btn">Bill Pay<br><small>Utilities, Credit Card</small></button>
+            <button class="grid-btn" id="btn-mini-statement">Mini Statement<br><small>View Audit History</small></button>
+            <button class="grid-btn">Card Services<br><small>PIN Change/Manage</small></button>
+            <button class="grid-btn" id="btn-loan-payment">Loan Payments<br><small>Mortgage, Auto</small></button>
+            <button class="grid-btn">Check Services<br><small>Order, Details</small></button>
+            <button class="grid-btn highlight-btn" onclick="openInvestments()" style="border-color: #48bb78;">Investments<br><small>Live Market Trading</small></button>
+            <button class="grid-btn">Settings/Help<br><small>Preferences</small></button>
+        </main>
+        <aside class="side-panel">
+            <button class="side-btn blue-btn">← BACK</button>
+            <button class="side-btn red-btn">X CANCEL</button>
+            <div class="balance-display">
+                <div>CHECKING ****1234<br><strong id="checking-bal">Loading...</strong></div>
+                <div style="margin-top: 15px;">SAVINGS ****5678<br><strong id="savings-bal">Loading...</strong></div>
+            </div>
+            <button class="side-btn blue-btn" id="btn-view-pin">VIEW PIN</button>
+            <button class="side-btn red-btn" onclick="endTransaction()">X END SESSION</button>
+        </aside>
+    </div>
+</div>
+
+<div id="investment-modal" class="modal hidden">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Live Market (Paper Trading)</h2>
+            <button class="close-btn red-btn" onclick="closeInvestments()">X</button>
+        </div>
+        <div class="portfolio-summary">
+            <p>Available Cleared Cash: <strong id="invest-cash">$0.00</strong></p>
+            <p>Total Portfolio Value: <strong id="portfolio-value">$0.00</strong></p>
+        </div>
+        <div id="market-list" class="market-list">
+            <p>Establishing secure connection to live market...</p>
+        </div>
+    </div>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
