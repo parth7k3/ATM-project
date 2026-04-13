@@ -1,10 +1,4 @@
-/**
- * GLOBAL COMMERCE BANK - ATM MIDDLEWARE, CYBERSEC & BACKEND SIMULATION
- */
 
-// ==========================================
-// 1. DATABASE & STATE MANAGEMENT 
-// ==========================================
 const DB_KEY = 'GlobalCommerceBank_DB';
 const defaultDatabase = {
     user: { id: "U-88291", name: "ALEX JOHNSON", pinHash: "1234", isAuthenticated: false },
@@ -24,9 +18,7 @@ function saveState() {
     updateUI();
 }
 
-// ==========================================
-// 2. AUDIT & LOGGING SYSTEM
-// ==========================================
+
 function generateTxId() {
     return 'TX-' + Math.random().toString(36).substr(2, 9).toUpperCase() + '-' + Date.now().toString().slice(-4);
 }
@@ -42,9 +34,7 @@ function logTransaction(type, amount, account, status, details = "") {
     saveState();
 }
 
-// ==========================================
-// 3. CYBERSECURITY INTRUSION DETECTION PLUGIN
-// ==========================================
+
 const CyberSec = {
     failedAttempts: 0, maxAttempts: 3, lockoutTime: 10000, 
     isLocked: false, txTimestamps: [],
@@ -98,9 +88,8 @@ const CyberSec = {
     }
 };
 
-// ==========================================
-// 4. BACKEND API SIMULATION
-// ==========================================
+
+
 function simulateNetworkRequest(processingTime = 800) {
     return new Promise((resolve) => setTimeout(resolve, processingTime));
 }
@@ -143,9 +132,7 @@ const BankAPI = {
     }
 };
 
-// ==========================================
-// 5. FRONTEND CONTROLLERS
-// ==========================================
+
 async function quickCash() {
     alert("Connecting to bank servers...");
     try {
@@ -185,9 +172,7 @@ function viewSecurityPin() {
     }
 }
 
-// ==========================================
-// 6. LIVE MARKET DATA (EXTERNAL API)
-// ==========================================
+
 let livePrices = {};
 
 async function fetchMarketData() {
@@ -264,9 +249,7 @@ function openInvestments() {
 
 function closeInvestments() { document.getElementById('investment-modal').classList.add('hidden'); }
 
-// ==========================================
-// 7. UI BINDING
-// ==========================================
+
 function updateUI() {
     document.getElementById('checking-bal').innerText = `$${db.accounts.checking.balance.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
     document.getElementById('savings-bal').innerText = `$${db.accounts.savings.balance.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
